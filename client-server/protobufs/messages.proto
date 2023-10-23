@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service Messages {
+    rpc GetMessages(GetMessagesRequest) returns (GetMessagesResponse) {}
+}
+
+message GetMessagesRequest {}
+message GetMessagesResponse {
+    repeated Message messages = 1;
+}
+
+message Message {
+    int32 id = 1;
+    string body = 2;
+}
